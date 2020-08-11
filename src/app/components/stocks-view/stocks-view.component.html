@@ -1,0 +1,7 @@
+<h1 class="text-center">{{ title }} - {{ currentDate | date: 'EEEE, MMMM d, y' }} (Day: {{ this.dayCounter + 1 }})</h1>
+<nav class="float-right">
+  <ul class="pagination">
+    <li class="page-item"><button (click)="updateApp()" class="page-link">Go to future!</button></li>
+  </ul>
+</nav>
+<app-stocks-table></app-stocks-table>

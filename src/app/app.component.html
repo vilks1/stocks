@@ -1,35 +1,8 @@
 <div class="container">
-  <h1 class="text-center">{{ title }} - {{ currentDate | date: 'EEEE, MMMM d, y' }} (Day: {{ this.dayCounter + 1 }})</h1>
-  <nav class="float-right">
-    <ul class="pagination">
-      <li class="page-item"><a (click)="updateTable()" class="page-link" href="#">Go to future!</a></li>
+  <nav>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active">First Component</a></li>
     </ul>
   </nav>
-  <div *ngIf="stocks.length === 0">Loading...</div>
-  <table class="table table-striped" *ngIf="stocks.length > 0">
-    <thead>
-    <tr>
-      <th scope="col">Symbol</th>
-      <th scope="col">Name</th>
-      <th scope="col">Initial value</th>
-      <th scope="col">Price</th>
-      <th scope="col">Change from initial value</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let stock of stocks; index as i">
-      <th scope="row">{{ stock.symbol }}</th>
-      <td>
-        {{ stock.name }}
-      </td>
-      <td>{{ stock.initialPrice | currency: 'USD' }}</td>
-      <td>{{ stock.price | currency: 'USD' }}</td>
-      <td [ngClass]="{'text-success': stock.percentageChange > 0, 'text-danger': stock.percentageChange <= 0 }">
-        <div *ngIf="stock.absoluteChange !== 0">
-          {{ stock.absoluteChange | currency: 'USD' }} ({{ stock.percentageChange | percent:'1.0-2' }})
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <router-outlet></router-outlet>
 </div>
