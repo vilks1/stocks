@@ -1,24 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './modules/routing/routing.module';
-
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { StocksTableComponent } from './components/stocks-table/stocks-table.component';
-import { StocksViewComponent } from './components/stocks-view/stocks-view.component';
+import { StocksModule } from './modules/stocks/stocks.module';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    StocksTableComponent,
-    StocksViewComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
+    RouterModule,
     NgbModule,
-    AppRoutingModule
+    StocksModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { HttpService } from './http.service';
+import { HttpService } from '../../../services/http.service';
 import { Observable } from 'rxjs';
 import { Stock } from '../models/stock';
 import { Injectable } from '@angular/core';
